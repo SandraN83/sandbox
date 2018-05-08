@@ -1,0 +1,80 @@
+sandra@sandra-PC:~$ hg clone https://github.com/SandraN83/sandbox.git sandbox-nuñez
+abort: destination 'sandbox-nuñez' is not empty
+sandra@sandra-PC:~$ hg clone https://github.com/SandraN83/sandbox.git sandbox-sandra_n
+importing git objects into hg
+updating to branch default
+35 files updated, 0 files merged, 0 files removed, 0 files unresolved
+sandra@sandra-PC:~$ gedit morita.txt
+^C
+sandra@sandra-PC:~$ hg add morita.txt
+abort: no repository found in '/home/sandra' (.hg not found)!
+sandra@sandra-PC:~$ cd sandbox-sandra_n
+sandra@sandra-PC:~/sandbox-sandra_n$ hg add morita.txt
+morita.txt: No such file or directory
+sandra@sandra-PC:~/sandbox-sandra_n$ mv ../morita.txt .
+sandra@sandra-PC:~/sandbox-sandra_n$ hg add morita.txt
+sandra@sandra-PC:~/sandbox-sandra_n$ hg status
+A morita.txt
+sandra@sandra-PC:~/sandbox-sandra_n$ hg diff
+diff -r 1eccb61d27b9 morita.txt
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/morita.txt	Tue May 08 19:01:10 2018 -0300
+@@ -0,0 +1,12 @@
++Hoy quiero olvidar que ya no te buscaba,
++quiero que por casualidad,
++vengas a buscarme,
++Tomes mi mano,
++seduzcas a mis oídos, y
++enamores mi mirada.
++
++Quiero que vengas envuelto de esa dulce llovizna,
++que vengas embarrado por la lluvia,
++que vengas escondido en ese relámpago...
++Y aparezcas en mi puerta... extraviado...
++
+sandra@sandra-PC:~/sandbox-sandra_n$ hg commit -m "haciendo el tercer commit"
+sandra@sandra-PC:~/sandbox-sandra_n$ hg push 
+pushing to https://github.com/SandraN83/sandbox.git
+http authorization required for https://github.com/SandraN83/sandbox.git/info/refs
+realm: GitHub
+user: SandraN83
+password: 
+searching for changes
+adding objects
+http authorization required for https://github.com/SandraN83/sandbox.git/git-receive-pack
+realm: GitHub
+user: SandraN83
+password: 
+added 1 commits with 1 trees and 1 blobs
+updating reference refs/heads/master
+sandra@sandra-PC:~/sandbox-sandra_n$ gedit morita.txt
+^C
+sandra@sandra-PC:~/sandbox-sandra_n$ hg add morita.txt
+morita.txt already tracked!
+sandra@sandra-PC:~/sandbox-sandra_n$ hg status
+M morita.txt
+sandra@sandra-PC:~/sandbox-sandra_n$ hg diff
+diff -r f51c1eb0550e morita.txt
+--- a/morita.txt	Tue May 08 19:02:30 2018 -0300
++++ b/morita.txt	Tue May 08 19:12:58 2018 -0300
+@@ -4,9 +4,14 @@
+ Tomes mi mano,
+ seduzcas a mis oídos, y
+ enamores mi mirada.
+-
++*******************************
+ Quiero que vengas envuelto de esa dulce llovizna,
+ que vengas embarrado por la lluvia,
+ que vengas escondido en ese relámpago...
++***********************************
+ Y aparezcas en mi puerta... extraviado...
++Hoy quiero olvidar que hay días en que no llueve,
++que hay días de sol donde nadie puede esconderse
++que a veces nadie mira debajo de los paraguas,
++buscando otros ojos enamorados...)
+ 
+sandra@sandra-PC:~/sandbox-sandra_n$ hg rm morita.txt
+not removing morita.txt: file is modified (use -f to force removal)
+sandra@sandra-PC:~/sandbox-sandra_n$ hg commit -m "modifique el archivo"
+sandra@sandra-PC:~/sandbox-sandra_n$ 
+
